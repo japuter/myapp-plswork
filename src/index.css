@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(251, 255, 0, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -39,7 +39,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #111111;
+  background-color: #839ef9;
 }
 
 /* media item card */
@@ -51,7 +51,7 @@ table {
 td,
 th {
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 3px solid #fa0606;
   text-align: center;
 }
 
