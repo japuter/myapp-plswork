@@ -1,1 +1,1 @@
-This project includes a web routing application that demonstrates basic routing principles. You can access the web application and see the routing in action. Open [this link](https://users.metropolia.fi/~jasperka/routing/) to view it in the browser.
+This project includes a web routing application that demonstrates basic routing principles. You can access the web application and see the routing in action. Open [this link](https://users.metropolia.fi/~jasperka/hooks/) to view it in the browser.
