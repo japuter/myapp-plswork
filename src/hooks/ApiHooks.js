@@ -34,7 +34,40 @@ const useUser = () => {
     return userResult;
   };
 
-  return {getUserById};
+  const getUserByToken = async () => {
+    const token = localStorage.getItem('token');
+    const userResult = await fetchData(import.meta.env.VITE_AUTH_API + '/users/token', {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    return userResult;
+  };
+
+  return { getUserById, getUserByToken };
 };
 
-export {useMedia, useUser};
+const useAuthentication = () => {
+  const postLogin = async (inputs) => {
+    try {
+      const fetchOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputs),
+      };
+      const loginResult = await fetchData(import.meta.env.VITE_AUTH_API + '/auth/login', fetchOptions);
+      console.log(loginResult);
+      localStorage.setItem('token', loginResult.token); // Save token to localStorage
+      window.location.href = '/'; // Redirect to 'Home'
+      return loginResult;
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+  };
+
+  return { postLogin };
+};
+
+export { useMedia, useUser, useAuthentication };
